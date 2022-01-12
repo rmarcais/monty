@@ -13,6 +13,8 @@ void print_err(int message, int ln)
 		fprintf(stderr, "L%d: can't pop an empty stack\n", ln);
 	else if (message == 4)
 		fprintf(stderr, "L%d: can't swap, stack too short\n", ln);
+	else if (message == 5)
+		fprintf(stderr, "L%d: can't add, stack too short\n", ln);
 	else
 		return;
 }

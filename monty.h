@@ -37,7 +37,6 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
 void print_stack(stack_t **stack, unsigned int line_number);
 void add_dnode(stack_t **stack, unsigned int line_number);
 int isinteger(char *s, int ln);
@@ -47,4 +46,5 @@ void _pint(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
 void print_err(int message, int ln);
 void _swap(stack_t **stack, unsigned int line_number);
+void _add(stack_t **stack, unsigned int line_number);
 #endif
