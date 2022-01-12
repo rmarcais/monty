@@ -15,6 +15,8 @@ void print_err(int message, int ln)
 		fprintf(stderr, "L%d: can't swap, stack too short\n", ln);
 	else if (message == 5)
 		fprintf(stderr, "L%d: can't add, stack too short\n", ln);
+	else if (message == 6)
+		fprintf(stderr, "L%d: can't sub, stack too short\n", ln);
 	else
 		return;
 }

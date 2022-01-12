@@ -10,7 +10,8 @@ int parseline(stack_t **stack, char *line, int ln)
 {
 	instruction_t instru[] = {{"push", add_dnode}, {"pall", print_stack},
 				  {"pint", _pint}, {"pop", _pop},
-				  {"swap", _swap}, {"add", _add}, {NULL, NULL}};
+				  {"swap", _swap}, {"add", _add}, {"sub", _sub},
+				  {NULL, NULL}};
 	int i;
 	char *token, *token2;
 
@@ -23,9 +24,10 @@ int parseline(stack_t **stack, char *line, int ln)
 	for (i = 0; instru[i].opcode; i++)
 		if (strcmp(token, instru[i].opcode) == 0)
 		{
-			if (((i == 2 || i == 3 || i == 4 || i == 5)
+			if (((i == 2 || i == 3 || i == 4 || i == 5 || i == 6)
 			     && *stack == NULL) ||
-			    ((i == 4 || i == 5) && ((*stack)->next == NULL)))
+			    ((i == 4 || i == 5 || i == 6)
+			     && ((*stack)->next == NULL)))
 			{
 				print_err(i, ln);
 				return (0);
