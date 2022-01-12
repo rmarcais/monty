@@ -7,15 +7,16 @@
  */
 int isinteger(char *s, int ln)
 {
-	int i;
+	int i = 0;
 
 	if (s == NULL)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", ln);
 		return (-1);
 	}
-
-	for (i = 0; s[i]; i++)
+	if (s[0] == '-')
+		i = 1;
+	for (; s[i]; i++)
 	{
 		if (isdigit(s[i]) == 0)
 		{
