@@ -10,10 +10,11 @@ void free_stack(stack_t **stack, unsigned int line_number)
 	stack_t *tmp;
 	(void)line_number;
 
-	while (*stack != NULL)
-	{
-		tmp = *stack;
-		*stack = (*stack)->next;
-		free(tmp);
-	}
+	if (*stack != NULL)
+		while (*stack != NULL)
+		{
+			tmp = *stack;
+			*stack = (*stack)->next;
+			free(tmp);
+		}
 }
