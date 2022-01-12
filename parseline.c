@@ -15,7 +15,7 @@ int parseline(stack_t **stack, char *line, int ln)
 	char *token, *token2;
 
 	token = strtok(line, " \n");
-	if (token == NULL)
+	if (token == NULL || strcmp(token, "nop") == 0)
 	{
 		ln++;
 		return (-1);
