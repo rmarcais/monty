@@ -41,8 +41,8 @@ int main(int argc, char **argv)
 	if (line)
 		free(line);
 	free_stack(&list, line_nb);
-	if (a == 1)
-		exit(EXIT_SUCCESS);
-	exit(EXIT_FAILURE);
+	if (a == 0)
+		exit(EXIT_FAILURE);
+	exit(EXIT_SUCCESS);
 	return (0);
 }
