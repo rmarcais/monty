@@ -22,6 +22,8 @@ void print_err(stack_t **stack, int message, int ln)
 		fprintf(stderr, "L%d: can't div, stack too short\n", ln);
 	else if (message == 7 && (*stack)->n == 0)
 		fprintf(stderr, "L%d: division by zero\n", ln);
+	else if (message == 8)
+		fprintf(stderr, "L%d: can't mul, stack too short\n", ln);
 	else
 		return;
 }

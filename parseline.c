@@ -11,7 +11,7 @@ int parseline(stack_t **stack, char *line, int ln)
 	instruction_t instru[] = {{"push", add_dnode}, {"pall", print_stack},
 				  {"pint", _pint}, {"pop", _pop},
 				  {"swap", _swap}, {"add", _add}, {"sub", _sub},
-				  {"div", _div}, {NULL, NULL}};
+				  {"div", _div}, {"mul", _mul}, {NULL, NULL}};
 	int i;
 	char *token, *token2;
 
