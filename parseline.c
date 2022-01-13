@@ -11,7 +11,7 @@ int parseline(stack_t **stack, char *line, int ln)
 	instruction_t instru[] = {{"push", add_dnode}, {"pall", print_stack},
 				  {"pint", _pint}, {"pop", _pop},
 				  {"swap", _swap}, {"add", _add}, {"sub", _sub},
-				  {NULL, NULL}};
+				  {"div", _div}, {NULL, NULL}};
 	int i;
 	char *token, *token2;
 
@@ -26,7 +26,7 @@ int parseline(stack_t **stack, char *line, int ln)
 		{
 			if (condition(stack, i) == 1)
 			{
-				print_err(i, ln);
+				print_err(stack, i, ln);
 				return (0);
 			}
 			token2 = strtok(NULL, " \n");

@@ -44,9 +44,10 @@ void free_stack(stack_t **stack, unsigned int line_number);
 int parseline(stack_t **stack, char *line, int ln);
 void _pint(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
-void print_err(int message, int ln);
+void print_err(stack_t **stack, int message, int ln);
 void _swap(stack_t **stack, unsigned int line_number);
 void _add(stack_t **stack, unsigned int line_number);
 void _sub(stack_t **stack, unsigned int line_number);
 int condition(stack_t **stack, int i);
+void _div(stack_t **stack, unsigned int line_number);
 #endif
