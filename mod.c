@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * _mod - computes the rest of the division of the second top el. by the top el.
+ * _mod - computes the rest of the division of the second top el by the top el.
  * @stack: The stack
  * @line_number: The line number
  * Return: Nothing.
