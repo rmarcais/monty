@@ -18,7 +18,7 @@ void print_err(stack_t **stack, int message, int ln)
 		fprintf(stderr, "L%d: can't add, stack too short\n", ln);
 	else if (message == 6)
 		fprintf(stderr, "L%d: can't sub, stack too short\n", ln);
-	else if (message == 7 && (*stack)->n != 0)
+	else if (message == 7 && (*stack == NULL || (*stack)->next == NULL))
 		fprintf(stderr, "L%d: can't div, stack too short\n", ln);
 	else if (message == 7 && (*stack)->n == 0)
 		fprintf(stderr, "L%d: division by zero\n", ln);

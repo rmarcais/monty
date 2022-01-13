@@ -7,10 +7,10 @@
  */
 int condition(stack_t **stack, int i)
 {
-	if (((i == 2 || i == 3 || i == 4 || i == 5 || i == 6) && *stack == NULL)
-	    || ((i == 4 || i == 5 || i == 6) && ((*stack)->next == NULL)) ||
-	    (i == 7 && (*stack == NULL || (*stack)->n == 0
-			|| (*stack)->next == NULL)))
+	if (((i == 2 || i == 3 || i == 4 || i == 5 || i == 6 || i == 7)
+	     && *stack == NULL) || ((i == 4 || i == 5 || i == 6 || i == 7)
+				    && ((*stack)->next == NULL)) ||
+	    (i == 7 && (*stack)->n == 0))
 		return (1);
 	return (0);
 }
