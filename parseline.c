@@ -24,10 +24,7 @@ int parseline(stack_t **stack, char *line, int ln)
 	for (i = 0; instru[i].opcode; i++)
 		if (strcmp(token, instru[i].opcode) == 0)
 		{
-			if (((i == 2 || i == 3 || i == 4 || i == 5 || i == 6)
-			     && *stack == NULL) ||
-			    ((i == 4 || i == 5 || i == 6)
-			     && ((*stack)->next == NULL)))
+			if (condition(stack, i) == 1)
 			{
 				print_err(i, ln);
 				return (0);
