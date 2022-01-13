@@ -51,4 +51,5 @@ void _sub(stack_t **stack, unsigned int line_number);
 int condition(stack_t **stack, int i);
 void _div(stack_t **stack, unsigned int line_number);
 void _mul(stack_t **stack, unsigned int line_number);
+void _mod(stack_t **stack, unsigned int line_number);
 #endif
