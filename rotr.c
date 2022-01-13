@@ -1,24 +1,22 @@
 #include "monty.h"
 /**
- * _rotl - rotates the stack to the top.
+ * _rotr - rotates the stack to the bottom.
  * @stack: The stack
  * @line_number: The line number
  * Return: Nothing.
  */
-void _rotl(stack_t **stack, unsigned int line_number)
+void _rotr(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp, *tmp2;
+	stack_t *tmp;
 	(void)line_number;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return;
 	tmp = *stack;
-	tmp2 = *stack;
 	while (tmp->next != NULL)
 		tmp = tmp->next;
-	*stack = (*stack)->next;
-	(*stack)->prev = NULL;
-	tmp2->next = NULL;
-	tmp->next = tmp2;
-	tmp2->prev = tmp;
+	tmp->prev->next = NULL;
+	tmp->next = *stack;
+	tmp->prev = NULL;
+	*stack = tmp;
 }
