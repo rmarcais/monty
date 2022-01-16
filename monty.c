@@ -5,7 +5,6 @@
  * @argv: array of arguments
  * Return: always 0
  */
-int stack_or_queue = 0;
 int main(int argc, char **argv)
 {
 	FILE *fp;

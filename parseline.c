@@ -1,4 +1,5 @@
 #include "monty.h"
+int stack_or_queue = 0;
 /**
  * parseline - parses a line
  * @stack: the stack
