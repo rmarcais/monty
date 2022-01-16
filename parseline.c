@@ -8,20 +8,21 @@
  */
 int parseline(stack_t **stack, char *line, int ln)
 {
-	instruction_t instru[] = {{"push", add_dnode}, {"pall", print_stack},
-				  {"pint", _pint}, {"pop", _pop},
-				  {"swap", _swap}, {"add", _add}, {"sub", _sub},
-				  {"div", _div}, {"mul", _mul}, {"mod", _mod},
-				  {"pchar", _pchar}, {"pstr", _pstr},
-				  {"rotl", _rotl}, {"rotr", _rotr},
-				  {NULL, NULL}};
 	int i;
 	char *token, *token2;
+	instruction_t instru[] = INSTRUCTIONS;
 
 	token = strtok(line, " \n");
 	if (token == NULL || strcmp(token, "nop") == 0 || token[0] == '#')
+		return (-1);
+	if (strcmp(token, "queue") == 0)
 	{
-		ln++;
+		stack_or_queue = 1;
+		return (-1);
+	}
+	else if (strcmp(token, "stack") == 0)
+	{
+		stack_or_queue = 0;
 		return (-1);
 	}
 	for (i = 0; instru[i].opcode; i++)

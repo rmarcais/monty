@@ -9,6 +9,22 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#define INSTRUCTIONS { \
+		{"push", _push}, \
+		{"pall", print_stack}, \
+		{"pint", _pint}, \
+		{"pop", _pop}, \
+		{"swap", _swap}, \
+		{"add", _add}, \
+		{"sub", _sub}, \
+		{"div", _div}, \
+		{"mul", _mul}, \
+		{"mod", _mod}, \
+		{"pchar", _pchar}, \
+		{"pstr", _pstr}, \
+		{"rotl", _rotl}, \
+		{"rotr", _rotr}, \
+		{NULL, NULL}}
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -20,9 +36,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 /**
  * struct instruction_s - opcode and its function
@@ -34,8 +50,8 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 void print_stack(stack_t **stack, unsigned int line_number);
 void add_dnode(stack_t **stack, unsigned int line_number);
@@ -56,4 +72,7 @@ void _pchar(stack_t **stack, unsigned int line_number);
 void _pstr(stack_t **stack, unsigned int line_number);
 void _rotl(stack_t **stack, unsigned int line_number);
 void _rotr(stack_t **stack, unsigned int line_number);
+void add_dnodeint_end(stack_t **stack, unsigned int line_number);
+void _push(stack_t **stack, unsigned int line_number);
+extern int stack_or_queue;
 #endif
